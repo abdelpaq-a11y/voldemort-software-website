@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            z-index: 1000;
+        }
+        
+        .whatsapp-float img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            /* يخليها دائرية */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .whatsapp-float img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Voldemort Software - شركة تطوير البرمجيات المتخصصة في تطوير المواقع الإلكترونية وتطبيقات الموبايل والحلول السحابية">
+    <meta name="keywords" content="تطوير مواقع, تطبيقات موبايل, حلول سحابية, برمجة, Voldemort Software">
+    <meta name="author" content="Voldemort Software">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Voldemort Software">
+    <meta property="og:description" content="Turning Ideas into Digital Reality">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="assets/logo.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Voldemort Software",
+            "description": "شركة تطوير البرمجيات المتخصصة في تطوير المواقع الإلكترونية وتطبيقات الموبايل والحلول السحابية",
+            "url": "https://voldemort-software.com",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "EGP"
+            },
+            "author": {
+                "@type": "Organization",
+                "name": "Voldemort Software",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "القاهرة",
+                    "addressCountry": "EG"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+201018625471",
+                    "contactType": "customer service",
+                    "email": "voldemortsoftware@gmail.com"
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Voldemort Software - تطوير البرمجيات والمواقع الإلكترونية</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+         :root {
+            /* Enhanced Professional Color Palette */
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --primary-lighter: #60a5fa;
+            --secondary-color: #0f172a;
+            --accent-color: #1e293b;
+            --surface-color: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --border-color: rgba(148, 163, 184, 0.1);
+            --gradient-primary: linear-gradient(135deg, #2563eb, #3b82f6, #60a5fa);
+            --gradient-secondary: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.3);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: "Tajawal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e293b 100%);
+            color: var(--text-primary);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        /* Animated Background */
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(29, 78, 216, 0.1) 0%, transparent 50%);
+            animation: backgroundShift 20s ease-in-out infinite;
+            z-index: -1;
+        }
+        
+        @keyframes backgroundShift {
+            0%,
+            100% {
+                transform: translateX(0) translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            25% {
+                transform: translateX(-10px) translateY(-10px) scale(1.05);
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(10px) translateY(-5px) scale(0.95);
+                opacity: 0.9;
+            }
+            75% {
+                transform: translateX(-5px) translateY(10px) scale(1.02);
+                opacity: 1;
+            }
+        }
+        /* Header Styles */
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+            transition: var(--transition);
+        }
+        
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+        
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+        
+        nav a:hover,
+        nav a.active {
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+            transition: var(--transition);
+            transform: translateX(-50%);
+            border-radius: 1px;
+        }
+        
+        nav a:hover::after,
+        nav a.active::after {
+            width: 80%;
+        }
+        /* Mobile Menu */
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+        /* Hero Section */
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+            margin-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(29, 78, 216, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .hero img {
+            height: 120px;
+            width: auto;
+            margin-bottom: 2rem;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(37, 99, 235, 0.3));
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light), #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition);
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--text-primary);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color), var(--primary-light));
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        /* Section Styles */
+        
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100px;
+            display: block;
+            position: relative;
+        }
+        /* Ensure hero section is visible */
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+            margin-top: 80px;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--text-primary);
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+            border-radius: 2px;
+        }
+        /* Services Section */
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            opacity: 1 !important;
+            visibility: visible !important;
+            min-height: 400px;
+        }
+        
+        .card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            opacity: 1 !important;
+            visibility: visible !important;
+            min-height: 300px;
+            display: block !important;
+            transform: perspective(1000px) rotateX(0deg);
+        }
+        
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.05) 50%, rgba(29, 78, 216, 0.1) 100%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+            transition: var(--transition);
+        }
+        
+        .card:hover::before {
+            left: 100%;
+        }
+        
+        .card:hover {
+            transform: perspective(1000px) rotateX(5deg) translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25), 0 0 0 1px rgba(37, 99, 235, 0.2);
+            border-color: var(--primary-color);
+        }
+        
+        .card:hover::after {
+            opacity: 1;
+        }
+        
+        .card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 10px 20px rgba(37, 99, 235, 0.3));
+        }
+        
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 5px 15px rgba(37, 99, 235, 0.2));
+        }
+        
+        .card h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        /* About Section */
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        /* Testimonials Section */
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+            font-family: serif;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25), 0 0 0 1px rgba(37, 99, 235, 0.2);
+            border-color: var(--primary-color);
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stars {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+        
+        .testimonial-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .author-info h4 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-info span {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        /* Team Section */
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+            transition: var(--transition);
+        }
+        
+        .team-card:hover::before {
+            left: 100%;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25), 0 0 0 1px rgba(37, 99, 235, 0.2);
+            border-color: var(--primary-color);
+        }
+        
+        .team-avatar {
+            margin-bottom: 1.5rem;
+        }
+        
+        .avatar-placeholder {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+        
+        .team-card:hover .avatar-placeholder {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .team-info h3 {
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        
+        .team-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .team-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-tag {
+            background: rgba(37, 99, 235, 0.2);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+        
+        .team-social {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+        
+        .team-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: rgba(37, 99, 235, 0.2);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50%;
+            transition: var(--transition);
+            font-size: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+        
+        .team-social a:hover {
+            background: var(--primary-color);
+            color: var(--text-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        /* Portfolio Section */
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: rgba(30, 41, 59, 0.8);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient-primary);
+            color: var(--text-primary);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .portfolio-item {
+            transition: var(--transition);
+        }
+        
+        .portfolio-item.hidden {
+            display: none;
+        }
+        
+        .portfolio-image {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+        
+        .portfolio-placeholder {
+            background: var(--gradient-secondary);
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+        
+        .portfolio-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: grayscale(0.3);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(37, 99, 235, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .portfolio-image:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-image:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .portfolio-overlay h3 {
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-overlay p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .portfolio-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .portfolio-link {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .portfolio-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        /* Pricing Section */
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            text-align: center;
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: var(--text-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .pricing-header h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            margin-bottom: 2rem;
+        }
+        
+        .currency {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+        
+        .amount {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        .period {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .pricing-features ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: right;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary-color);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+        /* FAQ Section */
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+        
+        .faq-item {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+        
+        .faq-question h3 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(15, 23, 42, 0.5);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+        
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 0;
+        }
+        /* Contact Section */
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background: rgba(15, 23, 42, 0.5);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            background: rgba(15, 23, 42, 0.8);
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        /* Footer */
+        
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            margin-top: 5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-logo {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            text-align: right;
+        }
+        
+        .footer-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 50%;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        /* Scroll to Top Button */
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: var(--text-primary);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            font-size: 1.2rem;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            nav {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                border-top: 1px solid var(--border-color);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero {
+                padding: 1rem;
+                margin-top: 70px;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            .contact-form {
+                padding: 2rem 1.5rem;
+                margin: 0 1rem;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .team-card {
+                padding: 1.5rem;
+            }
+            .team-skills {
+                justify-content: center;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .pricing-card.featured {
+                transform: none;
+            }
+            .pricing-card.featured:hover {
+                transform: translateY(-8px);
+            }
+            .faq-container {
+                margin: 2rem 1rem 0;
+            }
+            .faq-question {
+                padding: 1rem;
+            }
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+            .scroll-top {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+        /* Loading Animation */
+        
+        .loading {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+        
+        .loading.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Ensure sections are visible even if AOS fails */
+        
+        section {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+        }
+        /* Fallback for missing images */
+        
+        img {
+            min-height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: var(--border-radius);
+        }
+        
+        img[src*="logo"] {
+            min-height: 40px;
+            background: transparent;
+        }
+        /* Ensure content is visible */
+        
+        .hero-content,
+        .services,
+        .about-content,
+        .contact-form {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        /* Force services visibility */
+        
+        #services {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+            min-height: 600px !important;
+        }
+        
+        #services .services {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: grid !important;
+        }
+        
+        #services .card {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+            transform: none !important;
+        }
+        /* Success Message */
+        
+        .success-message {
+            background: var(--success-color);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
+        }
+        /* Error Message */
+        
+        .error-message {
+            background: var(--error-color);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201018625471" class="whatsapp-float" target="_blank" aria-label="تواصل معنا عبر واتساب">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #000000;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-animation">VS</div>
+            </div>
+            <div class="loading-text">Voldemort Software</div>
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">جاري التحميل...</div>
+            </div>
+        </div>
+    </div>
+
+    <header id="header">
+        <a href="#home" class="logo">
+            <img src="assets/logo.png" alt="Voldemort Software" loading="lazy" onerror="this.style.display='none';">
+            <span class="logo-text">Voldemort Software</span>
+        </a>
+        <nav id="nav">
+            <a href="#home" class="active">الرئيسية</a>
+            <a href="#services">الخدمات</a>
+            <a href="#about">من نحن</a>
+            <a href="#portfolio">معرض الأعمال</a>
+            <a href="#pricing">الأسعار</a>
+            <a href="#team">فريق العمل</a>
+            <a href="#testimonials">آراء العملاء</a>
+            <a href="#faq">الأسئلة الشائعة</a>
+            <a href="#contact">تواصل</a>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="القائمة" id="mobileMenuBtn">☰</button>
+    </header>
+
+    <section id="home" class="hero" data-aos="fade-up">
+        <div class="hero-content">
+            <img src="assets/logo.png" alt="Voldemort Software Logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display: none; font-size: 3rem; font-weight: bold; color: var(--primary-color); margin-bottom: 2rem;">VS</div>
+            <h1>Voldemort Software</h1>
+            <p>نحول الأفكار إلى واقع رقمي متميز</p>
+            <div class="cta-buttons">
+                <a href="#services" class="btn btn-primary">
+                    <span>استكشف خدماتنا</span>
+                    <span>→</span>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>تواصل معنا</span>
+                    <span>📧</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="opacity: 1 !important; visibility: visible !important; min-height: 600px;">
+        <h2 data-aos="zoom-in">خدماتنا المتخصصة</h2>
+        <div class="services" style="opacity: 1 !important; visibility: visible !important;">
+            <div class="card" data-aos="flip-left" style="opacity: 1 !important; visibility: visible !important; display: block !important;">
+                <div class="card-icon">🌐</div>
+                <h3>تطوير المواقع الإلكترونية</h3>
+                <p>نصنع مواقع ويب سريعة وآمنة ومتجاوبة مع جميع الأجهزة، مع التركيز على تجربة المستخدم والتصميم الحديث والأداء المتميز.</p>
+            </div>
+            <div class="card" data-aos="flip-left" data-aos-delay="150" style="opacity: 1 !important; visibility: visible !important; display: block !important;">
+                <div class="card-icon">📱</div>
+                <h3>تطبيقات الموبايل</h3>
+                <p>نطور تطبيقات iOS و Android عالية الجودة باستخدام أحدث التقنيات وأفضل الممارسات في التطوير مع واجهات مستخدم متميزة.</p>
+            </div>
+            <div class="card" data-aos="flip-left" data-aos-delay="450" style="opacity: 1 !important; visibility: visible !important; display: block !important;">
+                <div class="card-icon">🛜</div>
+                <h3>تصميم و تنفيذ و مراقبة الشبكات </h3>
+                <p> تصميم و ادارة وتنفيذ الشبكات و السيرفرات للشركات </p>
+            </div>
+            <div class="card" data-aos="flip-left" data-aos-delay="300">
+                <div class="card-icon">📊</div>
+                <h3>حلول البيانات</h3>
+                <p>إدارة البيانات وتحليلها بطرق ذكية تساعدك على اتخاذ قرارات دقيقة ودعم نمو أعمالك بكفاءة.</p>
+            </div>
+            <div class="card" data-aos="flip-left" data-aos-delay="450" style="opacity: 1 !important; visibility: visible !important; display: block !important;">
+                <div class="card-icon">🔧</div>
+                <h3>صيانة وتطوير</h3>
+                <p>خدمات الصيانة المستمرة والتطوير الدوري لضمان عمل جميع الأنظمة بكفاءة عالية وأمان مطلق.</p>
+            </div>
+            <div class="card" data-aos="flip-left" data-aos-delay="450" style="opacity: 1 !important; visibility: visible !important; display: block !important;">
+                <div class="card-icon">💹</div>
+                <h3>التسويق الإلكتروني</h3>
+                <p>خدمات التسويق الالكتروني المستمرة والتطوير الدوري لضمان عمل جميع الأنظمة بكفاءة عالية و العمل علي الترويج الكامل للعلامة التجارية و زيادة عدد العملاء .</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 data-aos="zoom-in">من نحن</h2>
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+                <p>نحن فريق متخصص من المطورين والمصممين المحترفين، نعمل على تحويل رؤيتك إلى واقع رقمي متميز. نؤمن بأن التكنولوجيا يجب أن تكون في خدمة الإنسان وليس العكس.</p>
+                <p>نستخدم أحدث التقنيات وأفضل الممارسات في التطوير لضمان تقديم حلول عالية الجودة تلبي جميع احتياجات عملائنا مع ضمان الأمان والأداء المتميز.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <div class="stat-label">مشروع مكتمل</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">30+</span>
+                        <div class="stat-label">عميل سعيد</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <div class="stat-label">سنوات خبرة</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <div class="stat-label">دعم فني</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <img src="assets/Back.png" alt="Turning Ideas into Digital Reality" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div style="display: none; background: linear-gradient(135deg, var(--primary-color), var(--primary-light)); height: 300px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">
+                    Turning Ideas into Digital Reality </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 data-aos="zoom-in">معرض أعمالنا</h2>
+        <div class="portfolio-filter" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">جميع الأعمال</button>
+            <button class="filter-btn" data-filter="websites">مواقع ويب</button>
+            <button class="filter-btn" data-filter="mobile">تطبيقات موبايل</button>
+            <button class="filter-btn" data-filter="data">تحليل البيانات</button>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item websites" data-aos="fade-up">
+                <div class="portfolio-image">
+                    <div class="portfolio-placeholder">
+                        <div class="portfolio-icon">🌐</div>
+                        <div class="portfolio-overlay">
+                            <h3>موقع شركة التقنية</h3>
+                            <p>موقع إلكتروني متجاوب وحديث</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link">عرض المشروع 👁️</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item mobile" data-aos="fade-up" data-aos-delay="150">
+                <div class="portfolio-image">
+                    <div class="portfolio-placeholder">
+                        <div class="portfolio-icon">📱</div>
+                        <div class="portfolio-overlay">
+                            <h3>تطبيق التجارة الإلكترونية</h3>
+                            <p>تطبيق iOS/Android للتسوق</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link">عرض المشروع 👁️</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item data" data-aos="fade-up" data-aos-delay="300">
+                <div class="portfolio-image">
+                    <div class="portfolio-placeholder">
+                        <div class="portfolio-icon">📊</div>
+                        <div class="portfolio-overlay">
+                            <h3>نظام تحليل بيانات</h3>
+                            <p>حلول ذكية لتحليل البيانات ودعم اتخاذ القرار</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link">عرض المشروع 👁️</a>
+                                <a href="#" class="portfolio-link">الوثائق 📋</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item data" data-aos="fade-up" data-aos-delay="450">
+                <div class="portfolio-image">
+                    <div class="portfolio-placeholder">
+                        <div class="portfolio-icon">📊</div>
+                        <div class="portfolio-overlay">
+                            <h3>منصة إدارة البيانات</h3>
+                            <p>حل متكامل لجمع وتحليل وعرض البيانات لدعم القرارات</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link">عرض المشروع 👁️</a>
+                                <a href="#" class="portfolio-link">الوثائق 📋</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="portfolio-item websites" data-aos="fade-up" data-aos-delay="450">
+                <div class="portfolio-image">
+                    <div class="portfolio-placeholder">
+                        <div class="portfolio-icon">🏥</div>
+                        <div class="portfolio-overlay">
+                            <h3>موقع مستشفى الرعاية</h3>
+                            <p>نظام إدارة المواعيد والمرضى</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link">عرض المشروع 👁️</a>
+                                <a href="#" class="portfolio-link">دراسة الحالة 📊</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item mobile" data-aos="fade-up" data-aos-delay="600">
+                <div class="portfolio-image">
+                    <div class="portfolio-placeholder">
+                        <div class="portfolio-icon">🎓</div>
+                        <div class="portfolio-overlay">
+                            <h3>تطبيق التعلم الذكي</h3>
+                            <p>منصة تعليمية تفاعلية</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link">عرض المشروع 👁️</a>
+                                <a href="#" class="portfolio-link">تجربة مجانية 🚀</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item cloud" data-aos="fade-up" data-aos-delay="750">
+                <div class="portfolio-image">
+                    <div class="portfolio-placeholder">
+                        <div class="portfolio-icon">🏭</div>
+                        <div class="portfolio-overlay">
+                            <h3>نظام المصنع الذكي</h3>
+                            <p>حل IoT لإدارة الإنتاج</p>
+                            <div class="portfolio-links">
+                                <a href="#" class="portfolio-link">عرض المشروع 👁️</a>
+                                <a href="#" class="portfolio-link">الحلول المماثلة 🔧</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2 data-aos="zoom-in">باقات الخدمات</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card" data-aos="fade-up">
+                <div class="pricing-header">
+                    <h3>الباقة الأساسية</h3>
+                    <div class="price">
+                        <span class="currency">ر.س</span>
+                        <span class="amount">2,500</span>
+                        <span class="period">/شهرياً</span>
+                    </div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>✅ موقع ويب متجاوب</li>
+                        <li>✅ 5 صفحات أساسية</li>
+                        <li>✅ نموذج تواصل</li>
+                        <li>✅ تحسين SEO أساسي</li>
+                        <li>✅ دعم فني لمدة شهر</li>
+                        <li>❌ تطبيق موبايل</li>
+                        <li>❌ نظام إدارة محتوى</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="btn btn-primary">اختيار الباقة</a>
+            </div>
+
+            <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="150">
+                <div class="pricing-badge">الأكثر طلباً</div>
+                <div class="pricing-header">
+                    <h3>الباقة المتقدمة</h3>
+                    <div class="price">
+                        <span class="currency">ر.س</span>
+                        <span class="amount">5,000</span>
+                        <span class="period">/شهرياً</span>
+                    </div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>✅ موقع ويب متجاوب</li>
+                        <li>✅ 10 صفحات مخصصة</li>
+                        <li>✅ نظام إدارة محتوى</li>
+                        <li>✅ تحسين SEO متقدم</li>
+                        <li>✅ تطبيق موبايل أساسي</li>
+                        <li>✅ دعم فني لمدة 3 أشهر</li>
+                        <li>✅ تحليلات متقدمة</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="btn btn-primary">اختيار الباقة</a>
+            </div>
+
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="pricing-header">
+                    <h3>الباقة الاحترافية</h3>
+                    <div class="price">
+                        <span class="currency">ر.س</span>
+                        <span class="amount">10,000</span>
+                        <span class="period">/شهرياً</span>
+                    </div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>✅ موقع ويب متجاوب</li>
+                        <li>✅ صفحات غير محدودة</li>
+                        <li>✅ نظام إدارة محتوى متقدم</li>
+                        <li>✅ تطبيق موبايل احترافي</li>
+                        <li>✅ حلول سحابية</li>
+                        <li>✅ دعم فني لمدة سنة</li>
+                        <li>✅ استشارات مجانية</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="btn btn-primary">اختيار الباقة</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2 data-aos="zoom-in">آراء عملائنا</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card" data-aos="fade-up">
+                <div class="testimonial-content">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"خدمة ممتازة وجودة عالية! فريق محترف ومتعاون جداً. أنصح بالتعامل معهم بشدة."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💼</div>
+                        <div class="author-info">
+                            <h4>أحمد محمد</h4>
+                            <span>مدير شركة التقنية المتقدمة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="testimonial-content">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"أفضل شركة تطوير تعاملت معها! سرعة في التنفيذ ودقة في العمل. شكراً لكم!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍💼</div>
+                        <div class="author-info">
+                            <h4>سارة أحمد</h4>
+                            <span>صاحبة متجر إلكتروني</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-content">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"مشروعنا تم تسليمه في الوقت المحدد وبجودة تفوق التوقعات. فريق رائع!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💻</div>
+                        <div class="author-info">
+                            <h4>محمد علي</h4>
+                            <span>مطور تطبيقات</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <h2 data-aos="zoom-in">فريق العمل المحترف</h2>
+
+        <div class="team-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="team-avatar">
+                <div class="avatar-placeholder">👩‍💻</div>
+            </div>
+            <div class="team-info">
+                <h3> عمر عبد الباقي</h3>
+                <span class="team-role"> مهندس شبكات و محلل بيانات </span>
+                <p class="team-description"> متخصص في ادارة و تصنيع الشبكات الكبيرة و تحليل البيانات</p>
+                <div class="team-skills">
+                    <span class="skill-tag">IT</span>
+                    <span class="skill-tag">Cissco</span>
+                    <span class="skill-tag">MikroTik</span>
+                    <span class="skill-tag">Microsoft Power Qury </span>
+                    <span class="skill-tag">Microsoft Power BI </span>
+                </div>
+                <div class="team-social">
+                    <a href="#" aria-label="لينكد إن">💼</a>
+                    <a href="#" aria-label="تويتر">🐦</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="team-avatar">
+                <div class="avatar-placeholder">👩‍💻</div>
+            </div>
+            <div class="team-info">
+                <h3>محمود سليمان </h3>
+                <span class="team-role">مطور برامج الهواتف المحمولة</span>
+                <p class="team-description">متخصص في انشاء و تطوير تطبيقات البرامج المحمولة Android & iOS.</p>
+                <div class="team-skills">
+                    <span class="skill-tag">Flutter</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">IT</span>
+                    <span class="skill-tag">DevOps</span>
+                </div>
+                <div class="team-social">
+                    <a href="#" aria-label="لينكد إن">💼</a>
+                    <a href="#" aria-label="تويتر">🐦</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-avatar">
+                <div class="avatar-placeholder">👨‍🔧</div>
+            </div>
+            <div class="team-info">
+                <h3> ابراهيم مبروك</h3>
+                <span class="team-role">مطور مواقع </span>
+                <p class="team-description">متخصص في انشاء و تطوير مواقع انترنت </p>
+                <div class="team-skills">
+                    <span class="skill-tag">Front - End Developer</span>
+                    <span class="skill-tag">Promet Engineer </span>
+                    <span class="skill-tag">Google Developer</span>
+                </div>
+                <div class="team-social">
+                    <a href="#" aria-label="لينكد إن">💼</a>
+                    <a href="#" aria-label="تويتر">🐦</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-card" data-aos="fade-up" data-aos-delay="450">
+            <div class="team-avatar">
+                <div class="avatar-placeholder">👨‍💼</div>
+            </div>
+            <div class="team-info">
+                <h3> عمرو عطية </h3>
+                <span class="team-role">UI \ UX Developer</span>
+                <p class="team-description">متخصص في صناعة واجهات UI \ UX لمواقع الانترنت و برامج الهواتف المحمولة/p>
+                    <div class="team-skills">
+                        <span class="skill-tag">UI Diploma</span>
+                        <span class="skill-tag">UX Diploma</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                    <div class="team-social">
+                        <a href="#" aria-label="لينكد إن">💼</a>
+                        <a href="#" aria-label="تويتر">🐦</a>
+                    </div>
+            </div>
+        </div>
+
+        <div class="team-card" data-aos="fade-up" data-aos-delay="600">
+            <div class="team-avatar">
+                <div class="avatar-placeholder">👩‍🔬</div>
+            </div>
+            <div class="team-info">
+                <h3>عمر البحيري </h3>
+                <span class="team-role">Digital Marketing </span>
+                <p class="team-description"> خبرة في التسويق الرقمي و استخدام المواقع ك Administration </p>
+                <div class="team-skills">
+                    <!--- <span class="skill-tag">Data Centers</span>
+                    <span class="skill-tag">Fiber Optics</span>
+                    <span class="skill-tag">Network Optimization</span>
+                    <span class="skill-tag">Monitoring</span>
+                </div>   -->
+                    <div class="team-social">
+                        <a href="#" aria-label="لينكد إن">💼</a>
+                        <a href="#" aria-label="تويتر">🐦</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card" data-aos="fade-up" data-aos-delay="750">
+                <div class="team-avatar">
+                    <div class="avatar-placeholder">👨‍🚀</div>
+                </div>
+                <div class="team-info">
+                    <h3> مروان البحيري </h3>
+                    <span class="team-role">Digital Marketing</span>
+                    <p class="team-description"> خبرة في التسويق الالكتروني </p>
+                    <div class="team-skills">
+                        <!--<span class="skill-tag">LAN/WAN</span>
+                        <span class="skill-tag">Network Administration</span>
+                        <span class="skill-tag">Troubleshooting</span>
+                        <span class="skill-tag">Documentation</span>
+                    </div> -->
+                        <div class="team-social">
+                            <a href="#" aria-label="لينكد إن">💼</a>
+                            <a href="#" aria-label="تويتر">🐦</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="contact">
+        <h2 data-aos="zoom-in">تواصل معنا</h2>
+
+        <form class="contact-form" data-aos="fade-up" id="contactForm">
+            <div class="success-message" id="successMessage" style="display:none; color:green; margin-bottom:10px;">
+                ✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.
+            </div>
+            <div class="error-message" id="errorMessage" style="display:none; color:red; margin-bottom:10px;">
+                ❌ حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى.
+            </div>
+
+            <div class="form-group">
+                <label for="name">الاسم الكامل *</label>
+                <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل">
+            </div>
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني *</label>
+                <input type="email" id="email" name="email" required placeholder="أدخل بريدك الإلكتروني">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">رقم الهاتف</label>
+                <input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك">
+            </div>
+
+            <div class="form-group">
+                <label for="service">الخدمة المطلوبة</label>
+                <input type="text" id="service" name="service" placeholder="مثال: تصميم موقع">
+            </div>
+
+            <div class="form-group">
+                <label for="budget">الميزانية</label>
+                <input type="text" id="budget" name="budget" placeholder="مثال: 10000 ج.م">
+            </div>
+
+            <div class="form-group">
+                <label for="message">الرسالة *</label>
+                <textarea id="message" name="message" required placeholder="أخبرنا عن مشروعك أو استفسارك"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; position: relative;">
+      <span id="btnText">إرسال الرسالة 📤</span>
+      <span id="btnSpinner" class="spinner" style="display:none;"></span>
+    </button>
+        </form>
+    </section>
+
+    <section id="faq">
+        <h2 data-aos="zoom-in">الأسئلة الشائعة</h2>
+        <div class="faq-container">
+            <div class="faq-item" data-aos="fade-up">
+                <div class="faq-question">
+                    <h3>كم تستغرق مدة تطوير الموقع؟</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>تختلف مدة التطوير حسب حجم المشروع وتعقيده. المواقع البسيطة تستغرق 2-3 أسابيع، بينما المشاريع المعقدة قد تستغرق 6-8 أسابيع.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                <div class="faq-question">
+                    <h3>هل تقدمون خدمات الصيانة بعد الإطلاق؟</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>نعم، نقدم خدمات الصيانة المستمرة والتحديثات الدورية لضمان عمل الموقع بكفاءة عالية وأمان مطلق.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="faq-question">
+                    <h3>هل المواقع متوافقة مع الموبايل؟</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>نعم، جميع المواقع التي نطورها متجاوبة بالكامل مع جميع الأجهزة (موبايل، تابلت، ديسكتوب) وتعمل بشكل مثالي.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="450">
+                <div class="faq-question">
+                    <h3>ما هي طرق الدفع المتاحة؟</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>نقبل جميع طرق الدفع: التحويل البنكي، البطاقات الائتمانية، PayPal، والدفع عند الاستلام للمشاريع الصغيرة.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="faq-question">
+                    <h3>هل تقدمون استضافة المواقع؟</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>نعم، نقدم خدمات الاستضافة السحابية الآمنة مع ضمان توفر 99.9% وسرعة تحميل عالية.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="750">
+                <div class="faq-question">
+                    <h3>هل يمكنني تعديل المحتوى بنفسي؟</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>نعم، نطور نظام إدارة محتوى سهل الاستخدام يتيح لك تعديل المحتوى والصور والنصوص بسهولة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="assets/logo.png" alt="Voldemort Software" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display: none; font-size: 1.5rem; font-weight: bold; color: var(--primary-color);">Voldemort Software</div>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>معلومات الشركة</h4>
+                <p>Voldemort Software هي شركة متخصصة في تطوير البرمجيات والمواقع الإلكترونية، نسعى لتقديم أفضل الحلول التقنية لعملائنا مع ضمان الجودة والأمان.</p>
+            </div>
+            <div class="footer-section">
+                <h4>خدماتنا</h4>
+                <p>• تطوير المواقع الإلكترونية</p>
+                <p>• تطبيقات الموبايل</p>
+                <p>• الحلول السحابية</p>
+                <p>• الصيانة والتطوير</p>
+                <p>• تصميم الشبكات</p>
+                <p>• التسويق الالكتروني</p>
+            </div>
+            <div class="footer-section">
+                <h4>معلومات التواصل</h4>
+                <p>📧 voldemortsoftware@gmail.com</p>
+                <p>📞 +201018625471</p>
+                <p>📍 مدينة السادات . جمهورية مصر العربية</p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Voldemort Software - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" aria-label="العودة للأعلى" id="scrollTopBtn">↑</button>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS with fallback
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100,
+                easing: 'ease-in-out'
+            });
+        } else {
+            // Fallback if AOS is not loaded
+            console.log('AOS library not loaded, using fallback animations');
+            document.querySelectorAll('[data-aos]').forEach(element => {
+                element.style.opacity = '1';
+                element.style.visibility = 'visible';
+                element.style.transform = 'none';
+            });
+        }
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // Active navigation link
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Portfolio Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.classList.remove('hidden');
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                        }, 100);
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // FAQ Toggle functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all FAQ items
+                faqItems.forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form Submission with validation
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name').trim();
+            const email = formData.get('email').trim();
+            const message = formData.get('message').trim();
+
+            // Basic validation
+            if (!name || !email || !message) {
+                errorMessage.textContent = 'يرجى ملء جميع الحقول المطلوبة';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                errorMessage.textContent = 'يرجى إدخال بريد إلكتروني صحيح';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Simulate form submission
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span>جاري الإرسال...</span> <span>⏳</span>';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                successMessage.style.display = 'block';
+                contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 2000);
+        });
+
+        // Email validation function
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Loading Animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+
+            // Force services section to be visible
+            const servicesSection = document.getElementById('services');
+            if (servicesSection) {
+                servicesSection.style.opacity = '1';
+                servicesSection.style.visibility = 'visible';
+                servicesSection.style.display = 'block';
+            }
+
+            // Force all cards to be visible
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.opacity = '1';
+                card.style.visibility = 'visible';
+                card.style.display = 'block';
+            });
+
+            // Debug: Check if all sections are visible
+            const sections = document.querySelectorAll('section');
+            console.log('Found sections:', sections.length);
+            sections.forEach((section, index) => {
+                console.log(`Section ${index + 1}:`, section.id, 'Visible:', section.offsetHeight > 0);
+            });
+        });
+
+        // Intersection Observer for Performance
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('loading');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.card, section').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add loading animation to stats
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const animateStats = () => {
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '') + (stat.textContent.includes('/') ? '/7' : '');
+                }, 50);
+            });
+        };
+
+        // Trigger stats animation when about section is visible
+        const aboutSection = document.getElementById('about');
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    aboutObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        aboutObserver.observe(aboutSection);
+    </script>
+    <script>
+        const scriptURL = "https://docs.google.com/spreadsheets/d/1qhHJk5eYYnSr4FW5_n3I3w9tYUSCoaHVAonWHLehXCA/edit?usp=sharing";
+        const form = document.getElementById("contactForm");
+        const successMessage = document.getElementById("successMessage");
+        const errorMessage = document.getElementById("errorMessage");
+        const btnText = document.getElementById("btnText");
+        const btnSpinner = document.getElementById("btnSpinner");
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            btnText.textContent = "جارٍ الإرسال...";
+            btnSpinner.style.display = "inline-block";
+
+            fetch(scriptURL, {
+                    method: "POST",
+                    body: new FormData(form)
+                })
+                .then(() => {
+                    successMessage.style.display = "block";
+                    errorMessage.style.display = "none";
+                    form.reset();
+                })
+                .catch(() => {
+                    errorMessage.style.display = "block";
+                    successMessage.style.display = "none";
+                })
+                .finally(() => {
+                    btnText.textContent = "إرسال الرسالة 📤";
+                    btnSpinner.style.display = "none";
+                });
+        });
+    </script>
+</body>
+
+</html>
